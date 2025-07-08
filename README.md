@@ -52,7 +52,59 @@ pyspark-retail-analytics/
 - Feature engineering using `StringIndexer`, `VectorAssembler`
 - Train a `LogisticRegression` model to predict churn
 - Evaluate model with `BinaryClassificationEvaluator` (AUC metric)
-
+```
+     ┌─────────────────────┐
+     │   Raw Data Sources  │
+     │  • customers.csv    │
+     │  • transactions.csv │
+     │  • inventory.csv    │
+     │  • streaming_orders │
+     └──────────┬──────────┘
+                │
+                ▼
+     ┌─────────────────────┐
+     │  Module 1: Ingestion│
+     │  • SparkSession     │
+     │  • Schema Definition│
+     │  • Data Loading     │
+     │  • Sample Generation│
+     └──────────┬──────────┘
+                │
+                ▼
+     ┌─────────────────────┐
+     │ Module 2: Cleaning  │
+     │  • Quality Checks   │
+     │  • Feature Engineer │
+     │  • Joins & Aggregs  │
+     │  • Window Functions │
+     └──────────┬──────────┘
+                │
+                ▼
+     ┌─────────────────────┐
+     │  Optimized Storage  │
+     │  • Parquet Format   │
+     │  • Data Partitioning│
+     │  • Memory Caching   │
+     └─┬─────────────────┬─┘
+       │                 │
+       ▼                 ▼
+┌──────────────┐ ┌──────────────┐ 
+│ Module 3:    │ │ Module 4:    │ 
+│ SQL Analytics│ │ Machine      │ 
+│ • BI Reports │ │ Learning     │ 
+│ • Customer   │ │ • Churn      │ 
+│   Segments   │ │   Prediction │ 
+│ • KPI Dashbd │ │ • ML Pipeline│ 
+└──────┬───────┘ └──────┬───────┘ 
+       │                │                
+       └───────┼────────┘
+               │
+               ▼
+    ┌──────────────────────┐
+    │ Business Intelligence│
+    │ • Churn Predictions  │
+    └──────────────────────┘
+```              
 ## Requirements
 
 - Python 3.8+
