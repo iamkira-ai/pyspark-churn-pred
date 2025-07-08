@@ -57,8 +57,6 @@ pyspark-retail-analytics/
      │   Raw Data Sources  │
      │  • customers.csv    │
      │  • transactions.csv │
-     │  • inventory.csv    │
-     │  • streaming_orders │
      └──────────┬──────────┘
                 │
                 ▼
@@ -94,8 +92,8 @@ pyspark-retail-analytics/
 │ • BI Reports │ │ Learning     │ 
 │ • Customer   │ │ • Churn      │ 
 │   Segments   │ │   Prediction │ 
-│ • KPI Dashbd │ │ • ML Pipeline│ 
-└──────┬───────┘ └──────┬───────┘ 
+└──────┬───────┘ │ • ML Pipeline│ 
+       │         └──────┬───────┘ 
        │                │                
        └───────┼────────┘
                │
